@@ -197,6 +197,21 @@
 .hub-action { max-width: min(14rem, 46%); }
 .mode-toggle { width: fit-content; max-width: 100%; align-self: center; }
 
+@media (min-width: 768px) {
+  .hub-stage { max-width: 44rem; }
+  .orbit-outer { inset: 2%; }
+  .orbit-inner { inset: 18%; }
+  .hub-glow { inset: 25%; }
+  .hub-action-top { top: 0; }
+  .hub-action-right { right: -1%; }
+  .hub-action-bottom { bottom: 0; }
+  .hub-action-left { left: -1%; }
+  .hub-action {
+    min-width: 9.5rem;
+    min-height: 3.375rem;
+  }
+}
+
 @media (max-width: 767px) {
   .hub-action {
     width: clamp(6.5rem, 22%, 8rem);
