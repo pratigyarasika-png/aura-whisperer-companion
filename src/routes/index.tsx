@@ -579,7 +579,7 @@ function ResearchWorkspace() {
 
               })}
 
-              <form className="hub-core relative z-10 flex aspect-square w-[64%] max-w-[23rem] flex-col items-center justify-center rounded-full border border-primary/25 bg-card p-[8%] text-center shadow-2xl sm:w-[58%] sm:p-[9%]" onSubmit={(event) => {
+              <form className="hub-core relative z-10 flex aspect-square w-[64%] max-w-[25rem] flex-col items-center justify-center rounded-full border border-primary/25 bg-card p-[8%] text-center shadow-2xl sm:w-[60%] sm:p-[8%]" onSubmit={(event) => {
                   event.preventDefault();
                   const prompt = query.trim();
                   if (!prompt) return;
