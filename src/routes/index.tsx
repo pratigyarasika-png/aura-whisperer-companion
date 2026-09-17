@@ -552,7 +552,7 @@ function ResearchWorkspace() {
                   <>
                     <span className="grid size-9 shrink-0 place-items-center rounded-full bg-secondary text-secondary-foreground transition-colors group-hover:bg-primary group-hover:text-primary-foreground"><Icon className="size-4" /></span>
                     <span className="hub-action-copy block min-w-0">
-                      <span className="hub-action-label block truncate text-[11px] font-semibold sm:text-xs">{action.label}</span>
+                      <span className="hub-action-label block truncate whitespace-nowrap text-[11px] font-semibold sm:text-xs">{action.label}</span>
                       <span className="hub-action-helper block truncate text-[10px] text-muted-foreground">{action.helper}</span>
                     </span>
                   </>
