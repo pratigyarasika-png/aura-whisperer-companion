@@ -115,7 +115,10 @@ export function histogram(values: number[], bins = 10) {
   if (!values.length) return [];
   const low = min(values); const high = max(values); const width = (high - low || 1) / bins;
   const counts = Array.from({ length: bins }, () => 0);
-  values.forEach((value) => { counts[Math.min(bins - 1, Math.floor((value - low) / width))] += 1; });
+  values.forEach((value) => {
+    const index = Math.min(bins - 1, Math.floor((value - low) / width));
+    counts[index] = (counts[index] ?? 0) + 1;
+  });
   return counts.map((count, index) => ({ bin: `${formatNumber(low + index * width)}–${formatNumber(low + (index + 1) * width)}`, count }));
 }
 
