@@ -226,15 +226,17 @@
 
 @media (max-width: 639px) {
   .hub-stage {
-    max-width: 24rem;
-    scale: 0.88;
+    width: 24rem;
+    max-width: none;
+    overflow: visible;
+    scale: 0.82;
   }
-  .orbit-outer { inset: 11%; }
+  .orbit-outer { inset: 8%; }
   .orbit-inner { inset: 18%; }
   .hub-glow { inset: 29%; }
 
   .hub-action {
-    width: 7rem;
+    width: 6.75rem;
     height: 3rem;
     min-height: 3rem;
     max-width: none;
@@ -245,10 +247,10 @@
     text-align: left;
   }
 
-  .hub-action-top { top: 11%; left: 50%; transform: translate(-50%, -50%); }
-  .hub-action-right { right: 11%; top: 50%; transform: translate(50%, -50%); }
-  .hub-action-bottom { bottom: 11%; left: 50%; transform: translate(-50%, 50%); }
-  .hub-action-left { left: 11%; top: 50%; transform: translate(-50%, -50%); }
+  .hub-action-top { top: 8%; left: 50%; transform: translate(-50%, -50%); }
+  .hub-action-right { right: 8%; top: 50%; transform: translate(50%, -50%); }
+  .hub-action-bottom { bottom: 8%; left: 50%; transform: translate(-50%, 50%); }
+  .hub-action-left { left: 8%; top: 50%; transform: translate(-50%, -50%); }
   .hub-action-top:hover { transform: translate(-50%, calc(-50% - 2px)); }
   .hub-action-right:hover { transform: translate(calc(50% + 2px), -50%); }
   .hub-action-bottom:hover { transform: translate(-50%, calc(50% + 2px)); }
@@ -262,7 +264,7 @@
   }
   .hub-action-helper { display: none; }
 
-  .hub-core { width: 54% !important; padding: 3.5% !important; }
+  .hub-core { width: 44% !important; padding: 3.5% !important; }
   .hub-core textarea { min-height: 2.25rem; margin-top: 0.25rem; line-height: 1rem; }
   .hub-core .mode-toggle { margin-top: 0.125rem; }
 }
