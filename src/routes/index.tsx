@@ -1,6 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import {
   Archive,
+  BarChart3,
   Bot,
   BookMarked,
   BookOpenText,
@@ -147,11 +148,11 @@ const hubActions: Array<{
   helper: string;
   icon: typeof FileSearch;
   position: string;
-  to?: "/search" | "/write";
+  to?: "/search" | "/write" | "/analyze";
   withQuery?: boolean;
 }> = [
   { label: "Find papers", helper: "Search literature", icon: FileSearch, position: "hub-action-top", to: "/search", withQuery: true },
-  { label: "Map concepts", helper: "Connect findings", icon: Network, position: "hub-action-right" },
+  { label: "Map concepts", helper: "Connect findings", icon: Network, position: "hub-action-right", to: "/analyze" },
   { label: "Cite sources", helper: "Build references", icon: Quote, position: "hub-action-bottom", to: "/write" },
   { label: "Analyze PDF", helper: "Ask documents", icon: BookOpenText, position: "hub-action-left" },
 ];
@@ -313,6 +314,7 @@ function ResearchWorkspace() {
               <NavItem icon={Search} label="Search & discovery" open={sidebarOpen} to="/search" />
               <NavItem icon={PenLine} label="Writing workspace" open={sidebarOpen} to="/write" />
               <NavItem icon={Library} label="Source library" open={sidebarOpen} to="/write" />
+              <NavItem icon={BarChart3} label="Data analysis" open={sidebarOpen} to="/analyze" />
 
             </NavGroup>
 
@@ -571,6 +573,13 @@ function ResearchWorkspace() {
                     </Link>
                   );
                 }
+                if (action.to === "/analyze") {
+                  return (
+                    <Link key={action.label} to="/analyze" className={cls}>
+                      {inner}
+                    </Link>
+                  );
+                }
                 return (
                   <button key={action.label} type="button" className={cls}>
                     {inner}
@@ -685,7 +694,7 @@ function NavGroup({ title, open, children }: { title: string; open: boolean; chi
   return <div>{open && <p className="mb-2 px-3 text-[10px] font-semibold uppercase text-muted-foreground">{title}</p>}<div className="space-y-1">{children}</div></div>;
 }
 
-function NavItem({ icon: Icon, label, open, active = false, to }: { icon: typeof History; label: string; open: boolean; active?: boolean; to?: "/search" | "/write" }) {
+function NavItem({ icon: Icon, label, open, active = false, to }: { icon: typeof History; label: string; open: boolean; active?: boolean; to?: "/search" | "/write" | "/analyze" }) {
   const className = cn("flex h-10 w-full items-center rounded-full text-sm transition-colors", open ? "gap-3 px-3" : "justify-center", active ? "bg-sidebar-accent font-medium text-sidebar-accent-foreground" : "text-muted-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground");
   const inner = (
     <>
